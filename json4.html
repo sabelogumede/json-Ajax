@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON On The Web</title>
+</head>
+
+<body>
+    <h1>Learn JSON</h1>
+    <div id="output"> </div>
+    
+
+
+    <script type="text/javascript">
+        //https://randomuser.me/api/
+        var data = '{"results":[{"gender":"male","name":{"title":"mr","first":"jeff","last":"wade"},"location":{"street":"2603 central st","city":"inglewood","state":"tennessee","postcode":79866,"coordinates":{"latitude":"89.3219","longitude":"-128.8829"},"timezone":{"offset":"-3:00","description":"Brazil, Buenos Aires, Georgetown"}},"email":"jeff.wade@example.com","login":{"uuid":"7e5416dc-a01a-4cbe-a89d-b6d3530e6d9f","username":"organicsnake750","password":"lucky7","salt":"QdfMVQ6z","md5":"64370d4c96ef2b6f02e1ac12e46123d7","sha1":"90314d0cf49681322a8c6af0a0303f8603e2f28e","sha256":"262cb38e0eb3964a659168e7f9e6968e30461570cff53bed1ca2131262eeac87"},"dob":{"date":"1965-11-15T18:14:49Z","age":53},"registered":{"date":"2015-10-30T18:07:23Z","age":3},"phone":"(320)-848-5977","cell":"(581)-680-5038","id":{"name":"SSN","value":"600-59-6911"},"picture":{"large":"https://randomuser.me/api/portraits/men/23.jpg","medium":"https://randomuser.me/api/portraits/med/men/23.jpg","thumbnail":"https://randomuser.me/api/portraits/thumb/men/23.jpg"},"nat":"US"}],"info":{"seed":"5b02b916170c7d47","results":1,"page":1,"version":"1.2"}}';
+        
+        //convert string object to usable json object
+        var dataJSON = JSON.parse(data);
+        console.log(dataJSON);
+
+        //get html paremeter by id
+        var output = document.querySelector('#output')
+        //getting user first, last and thumbnail image and save it in our html variable
+        var html = dataJSON.results[0].name.first +" "+ dataJSON.results[0].name.last +'<img src="'+dataJSON.results[0].picture.thumbnail+'">';
+        console.log(html);
+        //pushing our data into our html id paremeter
+        output.innerHTML = html;
+
+        //converting json object back into a string
+        var strMe = JSON.stringify(dataJSON);
+        console.log(strMe);
+
+    </script>
+</body>
+
+
+</html>
