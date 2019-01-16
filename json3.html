@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSON</title>
+</head>
+
+<body>
+
+    <h1>Learn JSON</h1>
+    <div id="output"> </div>
+    
+
+
+    <script type="text/javascript">
+        //json object
+        var myObj ={
+            "friends":[{
+                "firstName":"Sfiso",
+                "lastName":"Nyawo"
+            },{
+                "firstName":"Sizwe",
+                "lastName":"Myeni"
+            },
+            {
+                "firstName":"Sabelo",
+                "lastName":"Gumede"
+            },
+            {
+                "firstName":"Fezeka",
+                "lastName":"Mabuza"
+            }]
+        }
+        //print out all friends information
+        var html = '';
+        var output = document.getElementById("output");
+
+        //forEach Loop
+        output.innerHTML = html;
+        myObj.friends.forEach(function(item){
+            output.innerHTML += item.firstName +''+
+            item.lastName + '<br>'
+        })
+        
+
+        //loop
+        /* for(x=0;x<myObj.friends.length;x++)
+            html += (Number(x)+1)+'. '+ 
+                myObj.friends[x].firstName +" "+ 
+                myObj.friends[x].lastName + '<br>'
+        }*/
+
+        //different loop option
+         /*for(var x in users){
+            //html += users[x].firstName +" "+ users[x].lastName
+            html += (Number(x)+1)+'. '+ 
+                myObj.friends[x].firstName +" "+ 
+                myObj.friends[x].lastName + '<br>'
+        }
+
+        document.getElementById("output").innerHTML = html;
+        */
+
+    </script>
+</body>
+
+
+</html>
